@@ -1,0 +1,24 @@
+/* Goals section */
+#goals_box img{
+    height: 470px;
+    width: 450px;
+    margin: 12px 0 20px 0px;
+}
+
+#goals_box div:hover{
+    box-shadow: 0px 0px 10px 0px lightgray;
+}
+
+#goals_box div{
+    border-radius: 10px;
+}
+
+#goals_box a{
+    text-decoration: none;
+    color: black;
+}
+
+.goals button:hover{
+    background-color: orangered;
+    border: 1px solid orangered;
+}

@@ -1,0 +1,158 @@
+
+/* HEADER */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar-brand img{
+    height: 70px;
+}
+
+.all_button button:hover{
+    background-color: orangered;
+    border: 1px solid orangered;
+}
+
+.laricon a {
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+#navbarNav li:hover{
+    color: orangered;
+}
+
+#navbarNav li{
+    text-decoration: underline white;
+}
+
+/* DARK-LIGHT MODE */
+
+/* Toggler */
+body {
+    transition: background-color 0.5s ease;
+}
+
+.toggler {
+    display: inline-block;
+    position: relative;
+    width: 48px;
+    height: 24px;
+    border-radius: 50px;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggler:before,
+.toggler:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: left 0.3s ease;
+}
+
+.toggler:before {
+    left: 2px;
+    background-color: #fff;
+}
+
+.toggler:after {
+    right: 2px;
+    background-color: #000;
+}
+
+.toggler.dark {
+    background-color: #333;
+}
+
+.toggler.dark:before {
+    left: 26px;
+}
+
+.toggler.dark:after {
+    right: 26px;
+}
+
+/* colors */
+.dark{
+    --primary-color: #181818;
+    --secondary-color: white ;
+    --tertiary-color: #383838;
+    --quaternary-color: gray;
+}
+
+body{
+    background-color: var(--primary-color);
+}
+
+.darknav{
+    background-color: var(--primary-color);
+}
+
+#navbarNav li{
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+.custom_white{
+    color: var(--secondary-color);
+}
+
+.dark_goals{
+    background-color: var(--tertiary-color);
+}
+
+.about_puma h6{
+    color: var(--secondary-color);
+}
+
+.about_puma p{
+    color: var(--quaternary-color);
+}
+
+.dark_contact{
+    color: var(--secondary-color);
+}
+
+.dark_contact p{
+    color: var(--quaternary-color);
+}
+
+.dark_copyright{
+    color: var(--quaternary-color);
+}
+
+.custom_hr {
+    background-color: var(--quaternary-color); 
+}
+
+#weather p{
+    color: var(--secondary-color);
+}
+
+.location_icon{
+    color: var(--secondary-color);
+}
+
+.dark_collapse{
+    background-color: var(--quaternary-color);
+}
+
+table{
+    background-color: var(--tertiary-color);
+}
+
+/* GEOLOCATION ND WEATHER */
+
+#weather {
+    height: 50px;
+    width: 80px;
+    border: solid 1px gray;
+    border-radius: 5px;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}

@@ -1,0 +1,11 @@
+Footer a{
+    text-decoration: none;
+}
+
+#social_media i:hover{
+    color: orangered;
+}
+
+.about_puma p:hover{
+    color: orangered;
+}
