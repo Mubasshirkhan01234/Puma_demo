@@ -15,12 +15,12 @@ const Coupon = () => {
 
   function loadCoupon() {
     document.getElementById('coupon_container').style.visibility = 'visible';
-    document.getElementById('main').style.opacity = '0.3';
+    document.getElementById('coupon_container').style.opacity = '1';
   }
 
   function handleCloseCoupon() {
     document.getElementById('coupon_container').style.visibility = 'hidden';
-    document.getElementById('main').style.opacity = '1';
+    document.getElementById('coupon_container').style.opacity = '0';
   }
 
   useEffect(() => {
