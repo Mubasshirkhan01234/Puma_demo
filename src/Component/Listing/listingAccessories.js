@@ -107,7 +107,6 @@ const ListingAccessories = () => {
                 }
             };
 
-
             const renderData = ({ data }) => {
                 if (data) {
                     if (data.length > 0) {

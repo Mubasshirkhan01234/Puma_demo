@@ -200,7 +200,7 @@ body{
 /* Loading image */
 .loading_img img{
     margin-left: 40%;
-    margin-top: -20%;
+    margin-top: -13%;
     position: fixed;
     z-index: 1;
 }

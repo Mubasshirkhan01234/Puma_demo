@@ -6,39 +6,39 @@ import { useNavigate } from "react-router-dom";
 
 const base_url = "https://puma-i1u3.onrender.com";
 
-const AccessoriesDetailsDisplay = () => {
+const SportsDetailsDisplay = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const merchandiseId = searchParams.get('merchandise_id');
     const subcategoryId = searchParams.get('sub_category_id');
-    const [accessoriesDetails, setAccessoriesDetails] = useState([]);
-    const [accessoriesDetails1, setAccessoriesDetails1] = useState([]);
-    const [accessoriesDetails2, setAccessoriesDetails2] = useState([]);
-    const [accessoriesDetails3, setAccessoriesDetails3] = useState([]);
-    const [accessoriesid] = useState(sessionStorage.getItem('accessoriesid'))
+    const [sportsDetails, setSportsDetails] = useState([]);
+    const [sportsDetails1, setSportsDetails1] = useState([]);
+    const [sportsDetails2, setSportsDetails2] = useState([]);
+    const [sportsDetails3, setSportsDetails3] = useState([]);
+    const [sportsid] = useState(sessionStorage.getItem('sportsid'))
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response1 = await axios.get(`${base_url}/accessory_details?sub_category_id=1&&merchandise_id=${merchandiseId}`);
+                const response1 = await axios.get(`${base_url}/sports_wear_details?sub_category_id=11&&merchandise_id=${merchandiseId}`);
                 if (response1.data && response1.data.length > 0) {
-                    setAccessoriesDetails(response1.data);
+                    setSportsDetails(response1.data);
                 }
 
-                const response2 = await axios.get(`${base_url}/accessory_details?sub_category_id=2&&merchandise_id=${merchandiseId}`);
+                const response2 = await axios.get(`${base_url}/sports_wear_details?sub_category_id=12&&merchandise_id=${merchandiseId}`);
                 if (response2.data && response2.data.length > 0) {
-                    setAccessoriesDetails1(response2.data);
+                    setSportsDetails1(response2.data);
                 }
 
-                const response3 = await axios.get(`${base_url}/accessory_details?sub_category_id=3&&merchandise_id=${merchandiseId}`);
+                const response3 = await axios.get(`${base_url}/sports_wear_details?sub_category_id=13&&merchandise_id=${merchandiseId}`);
                 if (response3.data && response3.data.length > 0) {
-                    setAccessoriesDetails2(response3.data);
+                    setSportsDetails2(response3.data);
                 }
 
-                const response4 = await axios.get(`${base_url}/accessory_details?sub_category_id=4&&merchandise_id=${merchandiseId}`);
+                const response4 = await axios.get(`${base_url}/sports_wear_details?sub_category_id=14&&merchandise_id=${merchandiseId}`);
                 if (response4.data && response4.data.length > 0) {
-                    setAccessoriesDetails3(response4.data);
+                    setSportsDetails3(response4.data);
                 }
 
             } catch (error) {
@@ -51,42 +51,42 @@ const AccessoriesDetailsDisplay = () => {
 
     const proceed = () => {
 
-        let selectedAccessory = null;
+        let selectedSports = null;
 
-        if (accessoriesDetails && accessoriesDetails.length > 0) {
-            selectedAccessory = accessoriesDetails[0];
-        } else if (accessoriesDetails1 && accessoriesDetails1.length > 0) {
-            selectedAccessory = accessoriesDetails1[0];
-        } else if (accessoriesDetails2 && accessoriesDetails2.length > 0) {
-            selectedAccessory = accessoriesDetails2[0]; 
-        } else if (accessoriesDetails3 && accessoriesDetails3.length > 0) {
-            selectedAccessory = accessoriesDetails3[0];
+        if (sportsDetails && sportsDetails.length > 0) {
+            selectedSports = sportsDetails[0];
+        } else if (sportsDetails1 && sportsDetails1.length > 0) {
+            selectedSports = sportsDetails1[0];
+        } else if (sportsDetails2 && sportsDetails2.length > 0) {
+            selectedSports = sportsDetails2[0]; 
+        } else if (sportsDetails3 && sportsDetails3.length > 0) {
+            selectedSports = sportsDetails3[0];
         }
-        if (selectedAccessory) {
-            navigate(`/placeOrder_Accessories/${selectedAccessory.merchandise_name}`);
+        if (selectedSports) {
+            navigate(`/placeOrder_Sports/${selectedSports.merchandise_name}`);
         } else {
             console.log("No accessory details found!");
         }
 
-        console.log("accessoriesDetails:", accessoriesDetails);
-        console.log("accessoriesDetails1:", accessoriesDetails1);
-        console.log("accessoriesDetails2:", accessoriesDetails2);
-        console.log("accessoriesDetails3:", accessoriesDetails3);
+        console.log("sportsDetails:", sportsDetails);
+        console.log("sportsDetails1:", sportsDetails1);
+        console.log("sportsDetails2:", sportsDetails2);
+        console.log("sportsDetails3:", sportsDetails3);
 
     };
 
     return (
         <>
-            {accessoriesDetails && accessoriesDetails.length > 0 ? (
+            {sportsDetails && sportsDetails.length > 0 ? (
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
-                            <img src={accessoriesDetails[0].image} alt={accessoriesDetails[0].merchandise_name} className="img-fluid rounded-3 merchandise_image" />
+                            <img src={sportsDetails[0].image} alt={sportsDetails[0].merchandise_name} className="img-fluid rounded-3 merchandise_image" />
                         </div>
                         <div className="col-lg-6 d-flex align-items-center">
                             <div className="large_button">
-                                <h3 className="display-8 fw-bold custom_white">{accessoriesDetails[0].merchandise_name}</h3>
-                                <p className="lead fw-bold custom_white">₹{accessoriesDetails[0].price}</p>
+                                <h3 className="display-8 fw-bold custom_white">{sportsDetails[0].merchandise_name}</h3>
+                                <p className="lead fw-bold custom_white">₹{sportsDetails[0].price}</p>
                                 <p className="lead custom_white text">Price includes GST</p>
                                 <hr className="custom_hr" />
                                 <i className="bi bi-cart2 custom_white"></i>&nbsp;
@@ -103,16 +103,16 @@ const AccessoriesDetailsDisplay = () => {
                         </div>
                     </div>
                 </div>
-            ) : accessoriesDetails1 && accessoriesDetails1.length > 0 ? (
+            ) : sportsDetails1 && sportsDetails1.length > 0 ? (
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
-                            <img src={accessoriesDetails1[0].image} alt={accessoriesDetails1[0].merchandise_name} className="img-fluid rounded-3 merchandise_image" />
+                            <img src={sportsDetails1[0].image} alt={sportsDetails1[0].merchandise_name} className="img-fluid rounded-3 merchandise_image" />
                         </div>
                         <div className="col-lg-6 d-flex align-items-center">
                             <div className="large_button">
-                                <h3 className="display-8 fw-bold custom_white">{accessoriesDetails1[0].merchandise_name}</h3>
-                                <p className="lead fw-bold custom_white">₹{accessoriesDetails1[0].price}</p>
+                                <h3 className="display-8 fw-bold custom_white">{sportsDetails1[0].merchandise_name}</h3>
+                                <p className="lead fw-bold custom_white">₹{sportsDetails1[0].price}</p>
                                 <p className="lead custom_white text">Price includes GST</p>
                                 <hr className="custom_hr" />
                                 <i className="bi bi-cart2 custom_white"></i>&nbsp;
@@ -129,16 +129,16 @@ const AccessoriesDetailsDisplay = () => {
                         </div>
                     </div>
                 </div>
-            ) : accessoriesDetails2 && accessoriesDetails2.length > 0 ? (
+            ) : sportsDetails2 && sportsDetails2.length > 0 ? (
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
-                            <img src={accessoriesDetails2[0].image} alt={accessoriesDetails2[0].merchandise_name} className="img-fluid rounded-3 merchandise_image" />
+                            <img src={sportsDetails2[0].image} alt={sportsDetails2[0].merchandise_name} className="img-fluid rounded-3 merchandise_image" />
                         </div>
                         <div className="col-lg-6 d-flex align-items-center">
                             <div className="large_button">
-                                <h3 className="display-8 fw-bold custom_white">{accessoriesDetails2[0].merchandise_name}</h3>
-                                <p className="lead fw-bold custom_white">₹{accessoriesDetails2[0].price}</p>
+                                <h3 className="display-8 fw-bold custom_white">{sportsDetails2[0].merchandise_name}</h3>
+                                <p className="lead fw-bold custom_white">₹{sportsDetails2[0].price}</p>
                                 <p className="lead custom_white text">Price includes GST</p>
                                 <hr className="custom_hr" />
                                 <i className="bi bi-cart2 custom_white"></i>&nbsp;
@@ -155,16 +155,16 @@ const AccessoriesDetailsDisplay = () => {
                         </div>
                     </div>
                 </div>
-            )  : accessoriesDetails3 && accessoriesDetails3.length > 0 ? (
+            )  : sportsDetails3 && sportsDetails3.length > 0 ? (
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
-                            <img src={accessoriesDetails3[0].image} alt={accessoriesDetails3[0].merchandise_name} className="img-fluid rounded-3 merchandise_image" />
+                            <img src={sportsDetails3[0].image} alt={sportsDetails3[0].merchandise_name} className="img-fluid rounded-3 merchandise_image" />
                         </div>
                         <div className="col-lg-6 d-flex align-items-center">
                             <div className="large_button">
-                                <h3 className="display-8 fw-bold custom_white">{accessoriesDetails3[0].merchandise_name}</h3>
-                                <p className="lead fw-bold custom_white">₹{accessoriesDetails3[0].price}</p>
+                                <h3 className="display-8 fw-bold custom_white">{sportsDetails3[0].merchandise_name}</h3>
+                                <p className="lead fw-bold custom_white">₹{sportsDetails3[0].price}</p>
                                 <p className="lead custom_white text">Price includes GST</p>
                                 <hr className="custom_hr" />
                                 <i className="bi bi-cart2 custom_white"></i>&nbsp;
@@ -192,4 +192,4 @@ const AccessoriesDetailsDisplay = () => {
     );
 }
 
-export default AccessoriesDetailsDisplay;
+export default SportsDetailsDisplay;

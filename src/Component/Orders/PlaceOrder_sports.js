@@ -219,7 +219,7 @@ const PlaceOrder = () => {
             </div>
             <div className="col-md-6">
               <label htmlFor="state" className="form-label fw-bold">
-                COST PER PRODUCT
+                COST
               </label>
               <div className="input-group">
                 <span className="input-group-text">&#8377;</span>

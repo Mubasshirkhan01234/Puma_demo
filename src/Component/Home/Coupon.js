@@ -1,41 +1,37 @@
 import React, { useEffect } from 'react';
 import './Coupon.css';
 
-const closeCoupon = () => {
-  const cpnBtn = document.getElementById("cpnBtn");
-  const cpnCode = document.getElementById("cpnCode");
-  
-  cpnBtn.onclick = function () {
+const Coupon = () => {
+  function handleCopyCoupon() {
+    const cpnBtn = document.getElementById("cpnBtn");
+    const cpnCode = document.getElementById("cpnCode");
+
     navigator.clipboard.writeText(cpnCode.innerHTML);
     cpnBtn.innerHTML = "COPIED !";
     setTimeout(function () {
       cpnBtn.innerHTML = "COPY CODE";
     }, 5000);
-  };
-
-  window.onload = loadCoupon;
+  }
 
   function loadCoupon() {
     document.getElementById('coupon_container').style.visibility = 'visible';
     document.getElementById('main').style.opacity = '0.3';
   }
 
-  function closeCoupon() {
+  function handleCloseCoupon() {
     document.getElementById('coupon_container').style.visibility = 'hidden';
     document.getElementById('main').style.opacity = '1';
   }
-};
 
-const Coupon = () => {
   useEffect(() => {
-    closeCoupon(); 
+    loadCoupon();
   }, []);
 
   return (
     <>
       {/* COUPON CODE */}
       <div id="coupon_container">
-        <div onClick={closeCoupon} className="close">
+        <div onClick={handleCloseCoupon} className="close">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -54,7 +50,7 @@ const Coupon = () => {
         <h4>Using HDFC and SBI Credit Card</h4>
         <div className="coupon_row">
           <span id="cpnCode">SHOES2023</span>
-          <span id="cpnBtn">COPY CODE</span>
+          <span id="cpnBtn" onClick={handleCopyCoupon}>COPY CODE</span>
         </div>
         <p>Valid Till: 10 August, 2023</p>
       </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ViewOrder from "./ViewOrder";
 
-const apiUrl = "https://puma-i1u3.onrender.com/sports";
+const apiUrl = "https://puma-i1u3.onrender.com/men_wear";
 const url = "https://puma-i1u3.onrender.com/placeOrder";
 
 const PlaceOrder = () => {
@@ -219,7 +219,7 @@ const PlaceOrder = () => {
             </div>
             <div className="col-md-6">
               <label htmlFor="state" className="form-label fw-bold">
-                COST PER PRODUCT
+                COST
               </label>
               <div className="input-group">
                 <span className="input-group-text">&#8377;</span>

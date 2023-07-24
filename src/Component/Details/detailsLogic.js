@@ -20,7 +20,7 @@ const DetailsDisplay = () => {
     useEffect(() => {
      
         axios
-        .get(`${base_url}/sports_wear_details?sub_category_id=${subcategoryId}&merchandise_id=${merchandiseId}`)
+        .get(`${base_url}/sports_wear_details?sub_category_id=${subcategoryId}&&merchandise_id=${merchandiseId}`)
         .then((res) => {
           setGoalDetails(res.data[0]);
         })

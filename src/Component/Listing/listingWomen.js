@@ -311,7 +311,7 @@ const ListingWomen = () => {
                                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-4 p-5 text-black rounded">
                                     {data.map((item) => (
                                         <div className="col dark_goals" key={item._id} id="bottles">
-                                            <Link to={`/sports_wear_details?sub_category_id=${params.women}&&merchandise_id=${item.merchandise_id}`}>
+                                            <Link to={`/women_wear_details?sub_category_id=${params.women}&&merchandise_id=${item.merchandise_id}`}>
                                                 <img src={item.image} alt={item.merchandise_name} className="rounded-5 img-fluid" />
                                                 <h6 className="custom_white link-without-decoration text-black">{item.merchandise_name}</h6>
                                             </Link>
