@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './Header.css';
 import axios from 'axios';
 
+const RegisterUrl = "http://3.17.216.66:5000/api/auth/register";
+
 const Header = () => {
+  
+  const navigate = useNavigate();
+
+  const [values, setValues] = useState({
+    quantity: 0,
+    name: "Mubasshir",
+    email: "abc@gmail.com",
+    password: "123",
+    phone: "123"
+  });
 
   useEffect(() => {
 
@@ -47,6 +59,55 @@ const Header = () => {
     toggler.classList.toggle("dark");
   };
 
+  // Register Function
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'quantity') {
+      const quantity = parseInt(value);
+      if (!isNaN(quantity)) {
+        setValues((prevValues) => ({
+          ...prevValues,
+          [name]: quantity
+          
+        }));
+      }
+    } else {
+      setValues((prevValues) => ({
+        ...prevValues,
+        [name]: value
+      }));
+    }
+  };
+
+    const checkout = () => {
+      const { name, email, password, phone } = values;
+  
+      if (name && email && password && phone) {
+        console.log(values);
+        fetch(RegisterUrl, {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(values)
+        })
+          .then((response) => {
+            if (response.ok) {
+              navigate("/#loginModal");
+            } else {
+              throw new Error("Error regirtering details.");
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      } else {
+        alert("Please fill in all fields to get regitered.");
+      }
+    };
+  
+
   return (
     <>
       <header>
@@ -71,31 +132,31 @@ const Header = () => {
                 </li>
 
                 <li className="nav-item dropdown">
-                  <Link to = {`./ListingAccessories/accessories`} className='nav-link fw-bold' >
+                  <Link to = {`./Listing_accessories/accessories`} className='nav-link fw-bold' >
                     Accessories
                   </Link>
                 </li>
 
                 <li className="nav-item dropdown">
-                  <Link to = {`./ListingWomen/Women`} className='nav-link fw-bold' >
+                  <Link to = {`./Listing_women/women`} className='nav-link fw-bold' >
                     Women
                   </Link>
                 </li>
 
                 <li className="nav-item dropdown">
-                  <Link to = {`./ListingMen/Men`} className='nav-link fw-bold' >
+                  <Link to = {`./Listing_men/men`} className='nav-link fw-bold' >
                     Men
                   </Link>
                 </li>
 
                 <li className="nav-item dropdown">
-                  <Link to = {`./ListingKids/Kids`} className='nav-link fw-bold' >
+                  <Link to = {`./Listing_kids/kids`} className='nav-link fw-bold' >
                     Kids
                   </Link>
                 </li>
 
                 <li className="nav-item dropdown">
-                  <Link to = {`./ListingSports/Sports`} className='nav-link fw-bold' >
+                  <Link to = {`./Listing_sports/sports`} className='nav-link fw-bold' >
                     Sports
                   </Link>
                 </li>
@@ -105,12 +166,14 @@ const Header = () => {
                   <button className="btn btn-secondary fw-bold" type="submit">Search</button>
                 </form>
 
-                <li className="nav-item laricon">
+                {/* <li className="nav-item laricon">
                   <a className="nav-link fw-bold" href="#"><i className="bi bi-bag-heart"></i></a>
-                </li>
-                <li className="nav-item laricon">
-                  <a className="nav-link fw-bold" href="#"><i className="bi bi-cart2"></i></a>
-                </li>
+                </li> */}
+                <Link to = {'/shopping_cart'}>
+                  <li className="nav-item laricon">
+                    <a className="nav-link fw-bold" href="#"><i className="bi bi-cart2"></i></a>
+                  </li>
+                </Link>
                 <li className="nav-item laricon">
                   <a className="nav-link fw-bold" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i className="bi bi-person"></i></a>
                 </li>
@@ -149,7 +212,7 @@ const Header = () => {
                 </form>
               </div>
               <div className="modal-footer">
-                <p>Don't have an account? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</a></p>
+                <p className='text-secondary'>Don't have an account? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</a></p>
               </div>
             </div>
           </div>
@@ -168,21 +231,25 @@ const Header = () => {
                 <form className="all_button">
                   <div className="mb-3">
                     <label htmlFor="name" className="form-label">Full Name</label>
-                    <input type="text" className="form-control" id="name" placeholder="Enter your full name"></input>
+                    <input type="text" className="form-control" id="name" placeholder="Enter your full name" value = {values.name} onChange={handleInputChange}></input>
                   </div>
                   <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="email" placeholder="Enter your email"></input>
+                    <input type="email" className="form-control" id="email" placeholder="Enter your email" value = {values.email} onChange={handleInputChange}></input>
                   </div>
                   <div className="mb-3">
                     <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" id="password" placeholder="Enter your password"></input>
+                    <input type="password" className="form-control" id="password" placeholder="Enter your password" value = {values.password} onChange={handleInputChange}></input>
                   </div>
-                  <button type="submit" className="btn btn-secondary">Sign up</button>
+                  <div className="mb-3">
+                    <label htmlFor="phone" className="form-label">Phone No.</label>
+                    <input type="number" className="form-control" id="phone" placeholder="Enter your phone no." value = {values.phone} onChange={handleInputChange}></input>
+                  </div>
+                  <button type="submit" className="btn btn-secondary" onClick={checkout}>Sign up</button>
                 </form>
               </div>
               <div className="modal-footer">
-                <p>Already have an account? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></p>
+                <p className='text-secondary'>Already have an account? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></p>
               </div>
             </div>
           </div>

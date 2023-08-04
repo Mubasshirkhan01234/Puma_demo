@@ -36,86 +36,86 @@ const Footer = () => {
 
                 {/* Section: Links */}
                 <section class="">
-                <div class="container text-center text-md-start mt-5">
-                    <div class="row mt-3">
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4 custom_white">
-                        <i class="fas fa-gem me-3 text-secondary "></i>Puma
-                        </h6>
-                        <p class="custom_white">
-                        Here you can Choose your favourite and stylish merchandise.
-                        </p>
-                    </div>
+                    <div class="container text-center text-md-start mt-5">
+                        <div class="row mt-3">
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4 custom_white">
+                            <i class="fas fa-gem me-3 text-secondary "></i>Puma
+                            </h6>
+                            <p class="custom_white">
+                            Here you can Choose your favourite and stylish merchandise.
+                            </p>
+                        </div>
 
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 about_puma">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                        ABOUT PUMA
-                        </h6>
-                        <p>
-                        <a href="#!" class="text-reset">Who We Are</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Blog</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Work With Us</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Investor Relations</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Report Fund</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Contact Us</a>
-                        </p>
-                    </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 about_puma">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                            ABOUT PUMA
+                            </h6>
+                            <p>
+                            <a href="#!" class="text-reset">Who We Are</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Blog</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Work With Us</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Investor Relations</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Report Fund</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Contact Us</a>
+                            </p>
+                        </div>
 
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 about_puma">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                        For Merchandise
-                        </h6>
-                        <p>
-                        <a href="#!" class="text-reset">Partner With Us</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Apps For You</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Orders</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Help</a>
-                        </p>
-                    </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 about_puma">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                            For Merchandise
+                            </h6>
+                            <p>
+                            <a href="#!" class="text-reset">Partner With Us</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Apps For You</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Help</a>
+                            </p>
+                        </div>
 
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 about_puma">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                        Learn More
-                        </h6>
-                        <p>
-                        <a href="#!" class="text-reset">Privacy</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Security</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Terms</a>
-                        </p>
-                        <p>
-                        <a href="#!" class="text-reset">Sitemap</a>
-                        </p>
-                    </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 about_puma">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                            Learn More
+                            </h6>
+                            <p>
+                            <a href="#!" class="text-reset">Privacy</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Security</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Terms</a>
+                            </p>
+                            <p>
+                            <a href="#!" class="text-reset">Sitemap</a>
+                            </p>
+                        </div>
 
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 dark_contact">
-                        <h6 class="text-uppercase fw-bold mb-4 dark_contact">Contact</h6>
-                        <p><i class="bi bi-house-door-fill"></i>Ground Floor 12A 94 Meghdoot Nehru Place New Delhi - India </p>
-                        <p><i class="bi bi-envelope-fill"></i>companysecretary@puma.com</p>
-                        <p><i class="bi bi-telephone-fill"></i>+91-011-40592373</p>
-                        <p><i class="bi bi-printer-fill"></i>N.A.</p>
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 dark_contact">
+                            <h6 class="text-uppercase fw-bold mb-4 dark_contact">Contact</h6>
+                            <p><i class="bi bi-house-door-fill"></i>Ground Floor 12A 94 Meghdoot Nehru Place New Delhi - India </p>
+                            <p><i class="bi bi-envelope-fill"></i>companysecretary@puma.com</p>
+                            <p><i class="bi bi-telephone-fill"></i>+91-011-40592373</p>
+                            <p><i class="bi bi-printer-fill"></i>N.A.</p>
+                        </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
                 </section>
 
                 {/* Copyright */}

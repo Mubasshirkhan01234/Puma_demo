@@ -44,15 +44,15 @@ const Coupon = () => {
           </svg>
         </div>
         <img id="coupon_icon" src="https://i.ibb.co/48YStr7/coupon-icon.webp" alt="coupon-icon" />
-        <h4>
+        <h4 className='text-center'>
           <button id="off">40% off</button> on Puma Shoes
         </h4>
-        <h4>Using HDFC and SBI Credit Card</h4>
+        <h4 className='text-center'>Using HDFC and SBI Credit Card</h4>
         <div className="coupon_row">
           <span id="cpnCode">SHOES2023</span>
           <span id="cpnBtn" onClick={handleCopyCoupon}>COPY CODE</span>
         </div>
-        <p>Valid Till: 10 August, 2023</p>
+        <p className='text-center'>Valid Till: 10 August, 2023</p>
       </div>
     </>
   );

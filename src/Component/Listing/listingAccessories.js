@@ -114,13 +114,16 @@ const ListingAccessories = () => {
                             <div className="container">
                                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-4 p-5 text-black rounded">
                                     {data.map((item) => (
-                                        <div className="col dark_goals" key={item._id} id="bottles">
+                                        <div className="col dark_goals" key={item._id} id="bottles">                           
                                             <Link to={`/accessory_details?sub_category_id=${params.accessories}&&merchandise_id=${item.merchandise_id}`}>
                                                 <img src={item.image} alt={item.merchandise_name} className="rounded-5 img-fluid" />
                                                 <h6 className="custom_white link-without-decoration text-black">{item.merchandise_name}</h6>
                                             </Link>
                                             <h5 className="price">₹{item.price}</h5>
                                             <figcaption className="figure-caption">Extra 5% off on online payments</figcaption>
+                                            <Link to = {'/shopping_cart'}>
+                                            <a href="" className="btn btn-secondary mt-3 cart_button">ADD TO CART</a>
+                                            </Link>
                                             <hr className="custom_hr" />
                                         </div>
                                     ))}

@@ -317,6 +317,7 @@ const ListingWomen = () => {
                                             </Link>
                                             <h5 className="price">₹{item.price}</h5>
                                             <figcaption className="figure-caption">Extra 5% off on online payments</figcaption>
+                                            <a href="" className="btn btn-secondary mt-3 cart_button">ADD TO CART</a>
                                             <hr className="custom_hr" />
                                         </div>
                                     ))}

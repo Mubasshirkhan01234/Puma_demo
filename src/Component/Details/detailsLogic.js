@@ -15,7 +15,15 @@ const DetailsDisplay = () => {
     const merchandiseId = searchParams.get('merchandise_id');
     const subcategoryId = searchParams.get('sub_category_id');
     const [goalDetails, setGoalDetails] = useState([]);
-    const [goalid] = useState(sessionStorage.getItem('goalid'))
+    const [goalid] = useState(sessionStorage.getItem('goalid'));
+
+    const getExpectedDeliveryDate = () => {
+        const today = new Date();
+        const expectedDeliveryDate = new Date(today);
+        expectedDeliveryDate.setDate(today.getDate() + 5);
+        return expectedDeliveryDate.toDateString();
+    };
+
 
     useEffect(() => {
      
@@ -48,16 +56,14 @@ const DetailsDisplay = () => {
                                 <p className="lead fw-bold custom_white">₹{goalDetails.price}</p>
                                 <p className="lead custom_white text">Price includes GST</p>
                                 <hr className="custom_hr" />
-                                <i className="bi bi-cart2 custom_white"></i>&nbsp;
-                                <a href="" className="btn btn-secondary" onClick={proceed}>ADD TO CART</a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <i className="bi bi-bag-heart custom_white"></i>&nbsp;
-                                <a href="" className="btn btn-secondary">ADD TO WISHLIST</a>
+                                <a href="" className="btn btn-secondary" onClick={proceed}>PROCEED TO BUY</a>
                                 <hr className="custom_hr" />
                                 <h5 className="custom_white">Shipping and Returns</h5>
                                 <p className="custom_white">Free standard delivery on all orders and free return for all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.
                                     <br />
                                     For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com .</p>
+                                <h5 className="custom_white">Expected Delivery</h5>
+                                <p className="custom_white"> Expected delivery date: {getExpectedDeliveryDate()}</p> 
                             </div>
                         </div>
                     </div>

@@ -54,6 +54,7 @@ const ListingLogic = () => {
                                     </Link>
                                     <h5 className="price">₹{item.price}</h5>
                                     <figcaption className="figure-caption">Extra 5% off on online payments</figcaption>
+                                    <a href="" className="btn btn-secondary mt-3 cart_button">ADD TO CART</a>
                                     <hr className="custom_hr" />
                                 </div>
                             ))}
@@ -94,7 +95,7 @@ const ListingLogic = () => {
                                         Product Type
                                     </a>
                                     <ul className="dropdown-menu darknav bg-light" aria-labelledby="womenDropdown">
-                                        <li><a className="dropdown-item" href="#">{goalList1}</a></li>
+                                        <li><a className="dropdown-item" href="#">Sports</a></li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">

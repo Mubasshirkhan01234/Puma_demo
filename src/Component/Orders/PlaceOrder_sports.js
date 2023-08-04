@@ -9,12 +9,12 @@ const PlaceOrder = () => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const fetchPriceByMerchandiseName = async (merchandiseName) => {
+  const fetchPriceByMerchandiseName = async (merchandisename) => {
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
       const merchandise = data.find(
-        (item) => item.merchandise_name === merchandiseName
+        (item) => item.merchandise_name === merchandisename
       );
       if (merchandise) {
         return merchandise.price;
@@ -28,7 +28,7 @@ const PlaceOrder = () => {
   const [price, setPrice] = useState(0);
   const [values, setValues] = useState({
     orderId: Math.round(Math.random() * 100000),
-    merchandise_name: params.merchandiseName,
+    merchandise_name: params.merchandisename,
     quantity: 0,
     name: "",
     email: "",
@@ -42,7 +42,7 @@ const PlaceOrder = () => {
   useEffect(() => {
     const fetchMerchandisePrice = async () => {
       const fetchedPrice = await fetchPriceByMerchandiseName(
-        params.merchandiseName
+        params.merchandisename
       );
       if (fetchedPrice) {
         setPrice(fetchedPrice);
@@ -54,7 +54,7 @@ const PlaceOrder = () => {
     };
 
     fetchMerchandisePrice();
-  }, [params.merchandiseName]);
+  }, [params.merchandisename]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -213,7 +213,7 @@ const PlaceOrder = () => {
                 type="text"
                 className="form-control dark_goals"
                 id="city"
-                placeholder={params.merchandiseName}
+                placeholder={params.merchandisename}
                 readOnly
               />
             </div>
