@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// import ScrollReveal from 'scrollreveal';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import './Header.css';
 import axios from 'axios';
@@ -6,6 +7,17 @@ import axios from 'axios';
 const RegisterUrl = "http://3.17.216.66:5000/api/auth/register";
 
 const Header = () => {
+
+  // const sr = ScrollReveal({
+  //   origin: 'top',
+  //   distance: '60px',
+  //   duration: 1500,
+  //   delay: 400,
+  //   reset: true
+  // })
+  
+  // sr.reveal(`.top_image`, {origin: 'left'})
+  // sr.reveal(`.top_description`, {origin: 'right'})
   
   const navigate = useNavigate();
 
@@ -106,7 +118,6 @@ const Header = () => {
         alert("Please fill in all fields to get regitered.");
       }
     };
-  
 
   return (
     <>
@@ -259,10 +270,10 @@ const Header = () => {
        {/* Top section */}
         <div class="container">
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 top_image">
               <img src="https://i.ibb.co/y6JbT60/top.png" alt="Top Image" class="img-fluid"></img>
             </div>
-            <div class="col-lg-6 d-flex align-items-center">
+            <div class="col-lg-6 d-flex align-items-center top_description">
               <div class="text-center large_button">
                 <h1 class="display-4 custom_white">Welcome to Our Website</h1>
                 <p class="lead custom_white">You can choose and fill your shopping cart with your favourite and new merchandise at great offers.</p>

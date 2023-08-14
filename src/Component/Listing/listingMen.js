@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ScrollReveal from 'scrollreveal';
 import './listing.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -7,6 +8,17 @@ import { Link } from 'react-router-dom';
 const base_url = "https://puma-i1u3.onrender.com";
 
 const ListingMen = () => {
+
+    const sr = ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 1000,
+        delay: 400,
+        reset: true
+      })
+    
+      sr.reveal(`.listingMen_content`) 
+
     const params = useParams();
 
     const [menData, setMenData] = useState([]);
@@ -266,7 +278,7 @@ const ListingMen = () => {
                     if (data.length > 0) {
                         return (
                             <div className="container">
-                                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-4 p-5 text-black rounded">
+                                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-4 p-5 text-black rounded listingMen_content">
                                     {data.map((item) => (
                                         <div className="col dark_goals" key={item._id} id="bottles">
                                             <Link to={`/men_wear_details?sub_category_id=${params.men}&&merchandise_id=${item.merchandise_id}`}>

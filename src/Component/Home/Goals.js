@@ -1,10 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import ScrollReveal from 'scrollreveal';
 import './Goals.css';
 import { Link } from 'react-router-dom';
 
 const base_url = "https://puma-i1u3.onrender.com";
 
 const Goals = () => {
+
+  const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 1500,
+    delay: 400,
+    reset: true
+  })
+
+  sr.reveal(`#goals_box`)
 
   const [Goals, setGoals] = useState([]);
 
