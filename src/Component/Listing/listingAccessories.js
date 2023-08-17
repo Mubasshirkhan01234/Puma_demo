@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ScrollReveal from 'scrollreveal';
+// import ScrollReveal from 'scrollreveal';
 import './listing.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -9,15 +9,15 @@ const base_url = "https://puma-i1u3.onrender.com";
 
 const ListingAccessories = () => {
 
-    const sr = ScrollReveal({
-        origin: 'top',
-        distance: '60px',
-        duration: 1000,
-        delay: 400,
-        reset: true
-      })
+    // const sr = ScrollReveal({
+    //     origin: 'top',
+    //     distance: '60px',
+    //     duration: 1000,
+    //     delay: 400,
+    //     reset: true
+    //   })
     
-      sr.reveal(`.listingAccessories_content`)
+    //   sr.reveal(`.listingAccessories_content`)
       
     const params = useParams();
     
