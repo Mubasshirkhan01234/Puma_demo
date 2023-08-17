@@ -22,3 +22,15 @@
     background-color: orangered;
     border: 1px solid orangered;
 }
+
+.dark_goals{
+    overflow: hidden;
+}
+
+.dark_goals:hover img{
+    scale: 1.05;
+}
+
+.dark_goals img{
+    transition: all ease 1s;
+}
